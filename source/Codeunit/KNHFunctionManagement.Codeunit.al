@@ -1,7 +1,7 @@
 /// <summary>
 /// Codeunit KNH_FunctionManagement (ID 50101).
 /// </summary>
-codeunit 50101 "KNH_FunctionManagement"
+codeunit 52000 "KNH_FunctionManagement"
 {
     var
         ErrorTxt: Label 'There is something wrong with the sales setup as the customer %1, %2 could not be used.', Comment = '%1 = Customer.No. %2 = Customer.Name';
