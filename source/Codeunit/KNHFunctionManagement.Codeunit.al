@@ -14,8 +14,8 @@ codeunit 52000 "KNH_FunctionManagement"
     var
         MyErrorInfo: ErrorInfo;
     begin
-        MyErrorInfo.Title := 'Ouu noo!';
-        MyErrorInfo.Message(StrSubstNo(ErrorTxt, Customer."No.", Customer.Name));
+        MyErrorInfo.Title := 'Oh no!';
+        MyErrorInfo.Message(StrSubstNo(this.ErrorTxt, Customer."No.", Customer.Name));
         MyErrorInfo.PageNo(Page::"Customer Card");
         MyErrorInfo.FieldNo(Customer.FieldNo("Customer Posting Group"));
         MyErrorInfo.RecordId(Customer.RecordId());
@@ -31,8 +31,8 @@ codeunit 52000 "KNH_FunctionManagement"
     var
         MyErrorInfo: ErrorInfo;
     begin
-        MyErrorInfo.Title := 'Ouu noo!';
-        MyErrorInfo.Message(StrSubstNo(ErrorTxt, Customer."No.", Customer.Name));
+        MyErrorInfo.Title := 'Oh no!';
+        MyErrorInfo.Message(StrSubstNo(this.ErrorTxt, Customer."No.", Customer.Name));
         MyErrorInfo.PageNo(Page::"Sales & Receivables Setup");
         MyErrorInfo.AddNavigationAction();
         Error(MyErrorInfo);
@@ -44,13 +44,14 @@ codeunit 52000 "KNH_FunctionManagement"
     /// <param name="Customer">Record Customer.</param>
     procedure DoSomething3(Customer: Record Customer)
     var
+        newLbl: Label 'TrySolve2';
         MyErrorInfo: ErrorInfo;
     begin
-        MyErrorInfo.Title := 'Ouu noo!';
-        MyErrorInfo.Message(StrSubstNo(ErrorTxt, Customer."No.", Customer.Name));
+        MyErrorInfo.Title := 'Oh no!';
+        MyErrorInfo.Message(StrSubstNo(this.ErrorTxt, Customer."No.", Customer.Name));
         MyErrorInfo.PageNo(Page::"Sales & Receivables Setup");
         MyErrorInfo.AddNavigationAction();
-        MyErrorInfo.AddAction('Why?!', Codeunit::"KNH_TKAResolveIt", 'TrySolve2');
+        MyErrorInfo.AddAction('Why?!', Codeunit::"KNH_ResolveIt", newLbl);
         Error(MyErrorInfo);
     end;
 }
