@@ -1,15 +1,14 @@
 /// <summary>
-/// Codeunit KNH_FunctionManagement (ID 50101).
+/// Codeunit contains three procedures that demonstrate different ways of using the ErrorInfo data type to show error messages with custom titles, messages, and actions. 
+/// The DoSomething procedure shows how to create an error message with a custom title and message, and add a navigation action to it. 
+/// The DoSomething2 procedure shows how to create an error message that navigates to a specific page without needing to specify a record. 
+/// The DoSomething3 procedure shows how to combine a navigation action with a custom action in the same error message.
 /// </summary>
-codeunit 52000 "KNH_FunctionManagement"
+codeunit 52000 KNHFunctionManagement
 {
     var
         ErrorTxt: Label 'There is something wrong with the sales setup as the customer %1, %2 could not be used.', Comment = '%1 = Customer.No. %2 = Customer.Name';
 
-    /// <summary>
-    /// DoSomething - The error message is shown with a custom title and text and two buttons – standard OK that just close the dialogue and the new “Navigate” action.
-    /// </summary>
-    /// <param name="Customer">Record Customer.</param>
     procedure DoSomething(Customer: Record Customer)
     var
         MyErrorInfo: ErrorInfo;
@@ -23,10 +22,6 @@ codeunit 52000 "KNH_FunctionManagement"
         Error(MyErrorInfo);
     end;
 
-    /// <summary>
-    /// DoSomething2 - If we want to open a page and we do not care about the specific record. We do not need to initialize the record variable. We just need to set the page we want to open.
-    /// </summary>
-    /// <param name="Customer">Record Customer.</param>
     procedure DoSomething2(Customer: Record Customer)
     var
         MyErrorInfo: ErrorInfo;
@@ -38,10 +33,6 @@ codeunit 52000 "KNH_FunctionManagement"
         Error(MyErrorInfo);
     end;
 
-    /// <summary>
-    /// DoSomething3 - We can even combine NavigationAction with our custom actions.
-    /// </summary>
-    /// <param name="Customer">Record Customer.</param>
     procedure DoSomething3(Customer: Record Customer)
     var
         newLbl: Label 'TrySolve2';
@@ -51,7 +42,7 @@ codeunit 52000 "KNH_FunctionManagement"
         MyErrorInfo.Message(StrSubstNo(this.ErrorTxt, Customer."No.", Customer.Name));
         MyErrorInfo.PageNo(Page::"Sales & Receivables Setup");
         MyErrorInfo.AddNavigationAction();
-        MyErrorInfo.AddAction('Why?!', Codeunit::"KNH_ResolveIt", newLbl);
+        MyErrorInfo.AddAction('Why?!', Codeunit::KNHResolveIt, newLbl);
         Error(MyErrorInfo);
     end;
 }

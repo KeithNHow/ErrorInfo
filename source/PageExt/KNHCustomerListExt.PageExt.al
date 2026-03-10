@@ -1,13 +1,13 @@
 /// <summary>
-/// PageExtension "KNH_CustomerListExt" (ID 52000) extends Record Customer.
+/// PageExtension extends Customer List page. The page extension adds a new action to the processing action pane. The new action is called KNHTest, and when clicked, it will display an error message with the title 'More Informative Error'.
 /// </summary>
-pageextension 52000 "KNH_CustomerListExt" extends "Customer List"
+pageextension 52000 KNHCustomerListExt extends "Customer List"
 {
     actions
     {
         addfirst(processing)
         {
-            action(KNH_Test)
+            action(KNHTest)
             {
                 ApplicationArea = All;
                 Caption = 'Test';

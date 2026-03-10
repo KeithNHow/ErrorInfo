@@ -1,7 +1,7 @@
 /// <summary>
-/// Codeunit KNH_TKAResolveIt (ID 50102).
+/// Codeunit called by the KNHFunctionManagement codeunit, DoSomething3 procedure.
 /// </summary>
-codeunit 52001 "KNH_ResolveIt"
+codeunit 52001 KNHResolveIt
 {
 
 }
