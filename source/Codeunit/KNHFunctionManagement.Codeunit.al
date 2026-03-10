@@ -35,8 +35,8 @@ codeunit 52000 KNHFunctionManagement
 
     procedure DoSomething3(Customer: Record Customer)
     var
-        newLbl: Label 'TrySolve2';
         MyErrorInfo: ErrorInfo;
+        newLbl: Label 'TrySolve2';
     begin
         MyErrorInfo.Title := 'Oh no!';
         MyErrorInfo.Message(StrSubstNo(this.ErrorTxt, Customer."No.", Customer.Name));

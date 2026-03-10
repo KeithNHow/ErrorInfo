@@ -1,7 +1,7 @@
 /// <summary>
 /// PermSet ErrorInfo (ID 52000).
 /// </summary>
-permissionset 52000 "KNH_ErrorInfo"
+permissionset 52000 KNH_ErrorInfo
 {
     Assignable = true;
     Caption = 'ErrorInfo', MaxLength = 30;
