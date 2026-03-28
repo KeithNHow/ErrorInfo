@@ -4,6 +4,10 @@
 /// The DoSomething2 procedure shows how to create an error message that navigates to a specific page without needing to specify a record. 
 /// The DoSomething3 procedure shows how to combine a navigation action with a custom action in the same error message.
 /// </summary>
+namespace KNHErrorInfo;
+using Microsoft.Sales.Customer;
+using Microsoft.Sales.Setup;
+
 codeunit 52000 KNHFunctionManagement
 {
     var
