@@ -4,7 +4,7 @@
 namespace KNHErrorInfo;
 using Microsoft.Sales.Customer;
 
-pageextension 52000 KNHCustomerListExt extends "Customer List"
+pageextension 52050 KNHCustomerListExt extends "Customer List"
 {
     actions
     {

@@ -3,7 +3,7 @@
 /// </summary>
 namespace KNHErrorInfo;
 
-codeunit 52001 KNHResolveIt
+codeunit 52051 KNHResolveIt
 {
 
 }

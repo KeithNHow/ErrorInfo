@@ -8,7 +8,7 @@ namespace KNHErrorInfo;
 using Microsoft.Sales.Customer;
 using Microsoft.Sales.Setup;
 
-codeunit 52000 KNHFunctionManagement
+codeunit 52050 KNHFunctionManagement
 {
     var
         ErrorTxt: Label 'There is something wrong with the sales setup as the customer %1, %2 could not be used.', Comment = '%1 = Customer.No. %2 = Customer.Name';
