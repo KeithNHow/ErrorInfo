@@ -22,9 +22,11 @@ pageextension 52000 KNHCustomerListExt extends "Customer List"
 
                 trigger OnAction()
                 var
-                    MyErrorInfo: ErrorInfo;
+                    KNHFunctionManagement: Codeunit KNHFunctionManagement;
                 begin
-                    MyErrorInfo.Title := 'More Informative Error';
+                    KNHFunctionManagement.DoSomething(Rec);
+                    KNHFunctionManagement.DoSomething2(Rec);
+                    KNHFunctionManagement.DoSomething3(Rec);
                 end;
             }
         }
